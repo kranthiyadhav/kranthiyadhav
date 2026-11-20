@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burra Kirani | Python Full-Stack Developer & Trainee</title>
+  <meta name="description" content="Portfolio of Burra Kirani - Python Full-Stack Developer & Trainee specializing in Python, Django, SQLite3, HTML5, CSS3, and modern web application development.">
+  <meta name="keywords" content="Burra Kirani, Python Developer, Django, Full-Stack Developer, Web Tech Institute, Bengaluru, Portfolio">
+  <meta name="author" content="Burra Kirani">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23ff1a40'>BK</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dark-theme">
+
+  <!-- Ambient Glowing Background Spheres & Grid -->
+  <div class="ambient-glow glow-top-center"></div>
+  <div class="ambient-glow glow-middle-right"></div>
+  <div class="ambient-glow glow-bottom-left"></div>
+  <div class="cyber-grid-overlay"></div>
+
+  <!-- Custom Cursor Follower -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- 3D Three.js Canvas Container -->
+  <div id="canvas-container"></div>
+
+  <!-- Audio feedback toggle (Subtle Futuristic SFX) -->
+  <button id="soundToggle" class="sound-toggle" aria-label="Toggle Sound Effects" title="Toggle Sound Feedback">
+    <i class="fa-solid fa-volume-xmark"></i>
+  </button>
+
+  <!-- Navigation Bar -->
+  <header class="glass-navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" data-sfx="hover">
+        <span class="logo-symbol">&lt;</span>
+        <span class="logo-text">KIRANI</span>
+        <span class="logo-dot">.py</span>
+        <span class="logo-symbol">&gt;</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about" class="nav-link" data-sfx="hover"><i class="fa-regular fa-user"></i> About</a>
+        <a href="#skills" class="nav-link" data-sfx="hover"><i class="fa-solid fa-code"></i> Skills</a>
+        <a href="#projects" class="nav-link" data-sfx="hover"><i class="fa-solid fa-laptop-code"></i> Projects</a>
+        <a href="#experience" class="nav-link" data-sfx="hover"><i class="fa-solid fa-briefcase"></i> Experience</a>
+        <a href="#education" class="nav-link" data-sfx="hover"><i class="fa-solid fa-graduation-cap"></i> Education</a>
+        <a href="#architecture" class="nav-link" data-sfx="hover"><i class="fa-solid fa-cubes"></i> Architecture</a>
+        <a href="#contact" class="nav-link" data-sfx="hover"><i class="fa-regular fa-envelope"></i> Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://github.com/kranthiyadhav" target="_blank" rel="noopener noreferrer" class="btn-icon" title="GitHub Profile" data-sfx="click">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="#contact" class="btn-glow-primary nav-cta" data-sfx="click">
+          <span>Hire Me</span>
+          <i class="fa-solid fa-paper-plane"></i>
+        </a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Open Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="hero-container">
+        
+        <!-- Left: Text & Info -->
+        <div class="hero-content">
+          <div class="badge-status">
+            <span class="pulse-indicator"></span>
+            <span class="badge-text">Seeking Opportunities &bull; Fresher 2026</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="text-glow-red">Burra Kirani</span>
+          </h1>
+
+          <div class="hero-typing-wrap">
+            <span class="typing-prefix">I build </span>
+            <span class="typing-text" id="typingText"></span>
+            <span class="typing-cursor">|</span>
+          </div>
+
+          <p class="hero-description">
+            Passionate <strong>Python Full-Stack Developer & Trainee</strong> based in Bengaluru. Dedicated to architecting robust web solutions using <strong>Python 3, Django, SQLite3</strong>, and modern frontend UI technologies with clean, modular, and responsive design systems.
+          </p>
+
+          <!-- Quick Info Pill Badges -->
+          <div class="hero-pills">
+            <div class="pill-item">
+              <i class="fa-solid fa-location-dot pill-icon"></i>
+              <span>Bengaluru, Karnataka, India</span>
+            </div>
+            <div class="pill-item">
+              <i class="fa-solid fa-building-columns pill-icon"></i>
+              <span>Web Tech Institute Trainee</span>
+            </div>
+            <div class="pill-item">
+              <i class="fa-solid fa-award pill-icon"></i>
+              <span>Diploma CSE (C23 &bull; 2026)</span>
+            </div>
+          </div>
+
+          <!-- Hero Buttons -->
+          <div class="hero-buttons">
+            <a href="#projects" class="btn-glow-primary" data-sfx="click">
+              <span>View Featured Projects</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn-glow-secondary" data-sfx="click">
+              <span>Get In Touch</span>
+              <i class="fa-solid fa-comments"></i>
+            </a>
+            <a href="https://github.com/kranthiyadhav" target="_blank" rel="noopener noreferrer" class="btn-glow-outline" data-sfx="click">
+              <i class="fa-brands fa-github"></i>
+              <span>kranthiyadhav</span>
+            </a>
+          </div>
+
+          <!-- Hero Quick Stats -->
+          <div class="hero-stats">
+            <div class="stat-card">
+              <span class="stat-number">Full-Stack</span>
+              <span class="stat-label">Python &amp; Django</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Responsive Layouts</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">Modular</span>
+              <span class="stat-label">App Architecture</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: 3D Holographic Avatar Frame -->
+        <div class="hero-visual">
+          <div class="avatar-3d-wrapper" id="avatar3D">
+            <!-- 3D Orbiting Glowing Cyber Rings -->
+            <div class="cyber-ring ring-outer"></div>
+            <div class="cyber-ring ring-middle"></div>
+            <div class="cyber-ring ring-inner"></div>
+
+            <!-- Floating 3D Tech Tags -->
+            <div class="floating-badge badge-top-right">
+              <i class="fa-brands fa-python"></i>
+              <span>Python 3</span>
+            </div>
+            <div class="floating-badge badge-bottom-left">
+              <i class="fa-solid fa-database"></i>
+              <span>Django &amp; SQLite3</span>
+            </div>
+            <div class="floating-badge badge-mid-left">
+              <i class="fa-brands fa-html5"></i>
+              <span>HTML5 &bull; CSS3</span>
+            </div>
+
+            <!-- Main Portrait Card with 3D Glow -->
+            <div class="avatar-card">
+              <div class="avatar-glow-backdrop"></div>
+              <img src="assets/images/profile.jpg" alt="Burra Kirani - Python Full-Stack Developer" class="avatar-img">
+              <div class="avatar-overlay-gradient"></div>
+              <div class="avatar-info-tag">
+                <span class="tag-name">Burra Kirani</span>
+                <span class="tag-role">Python Full-Stack Dev</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#about" class="scroll-down-indicator" aria-label="Scroll down">
+        <span class="mouse-icon">
+          <span class="wheel"></span>
+        </span>
+        <span class="scroll-text">EXPLORE</span>
+      </a>
+    </section>
+
+    <!-- ABOUT & CAREER OBJECTIVE SECTION -->
+    <section id="about" class="section-padding">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-regular fa-id-card"></i> Personal Overview</span>
+        <h2 class="section-title">About <span class="text-glow-red">Burra Kirani</span></h2>
+        <div class="title-underline"></div>
+        <p class="section-subtitle">Dedicated Python Full-Stack Developer with strong problem-solving skills and passion for modern web technologies.</p>
+      </div>
+
+      <div class="container about-grid">
+        
+        <!-- Left: Objective & Bio -->
+        <div class="about-card tilt-card" data-tilt>
+          <div class="card-glow-edge"></div>
+          <div class="card-header-icon">
+            <i class="fa-solid fa-bullseye"></i>
+            <h3>Career Objective</h3>
+          </div>
+          <blockquote class="objective-quote">
+            "To start my career as a fresher in the IT or software industry, improve my technical skills, gain practical experience, and contribute to an organization's growth through continuous learning and dedication."
+          </blockquote>
+          <p class="about-text">
+            I am a forward-looking developer specializing in full-stack architecture. With formal training at <strong>Web Tech Institute (Bengaluru)</strong> and diploma education in Computer Science and Engineering from <strong>SV Government Polytechnic, Tirupati</strong>, I blend solid computer science principles with practical hands-on experience in backend API and Django MVC development.
+          </p>
+
+          <div class="focus-box">
+            <div class="focus-title">
+              <i class="fa-solid fa-crosshairs text-glow-red"></i>
+              <strong>Primary Focus:</strong>
+            </div>
+            <p>Building scalable, secure, and intuitive full-stack web applications using Python, Django framework, and structured frontend technologies.</p>
+          </div>
+        </div>
+
+        <!-- Right: Information Matrix Cards -->
+        <div class="info-matrix">
+          
+          <div class="info-card tilt-card" data-tilt>
+            <div class="info-icon"><i class="fa-solid fa-user-tag"></i></div>
+            <div class="info-details">
+              <span class="info-label">Full Name</span>
+              <span class="info-value">Burra Kirani</span>
+            </div>
+          </div>
+
+          <div class="info-card tilt-card" data-tilt>
+            <div class="info-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <div class="info-details">
+              <span class="info-label">Professional Role</span>
+              <span class="info-value">Python Full-Stack Developer &amp; Trainee</span>
+            </div>
+          </div>
+
+          <div class="info-card tilt-card" data-tilt>
+            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="info-details">
+              <span class="info-label">Current Location</span>
+              <span class="info-value">Bengaluru, Karnataka, India</span>
+            </div>
+          </div>
+
+          <div class="info-card tilt-card" data-tilt>
+            <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="info-details">
+              <span class="info-label">Email Address</span>
+              <span class="info-value copyable-text" id="emailVal" data-copy="burrakranthi41@gmail.com" title="Click to copy">
+                burrakranthi41@gmail.com <i class="fa-regular fa-copy copy-icon"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="info-card tilt-card" data-tilt>
+            <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="info-details">
+              <span class="info-label">Phone Number</span>
+              <span class="info-value copyable-text" id="phoneVal" data-copy="7013267395" title="Click to copy">
+                +91 7013267395 <i class="fa-regular fa-copy copy-icon"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="info-card tilt-card" data-tilt>
+            <div class="info-icon"><i class="fa-brands fa-github"></i></div>
+            <div class="info-details">
+              <span class="info-label">GitHub Repository</span>
+              <a href="https://github.com/kranthiyadhav" target="_blank" rel="noopener noreferrer" class="info-link">
+                github.com/kranthiyadhav <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS SECTION -->
+    <section id="skills" class="section-padding bg-darker">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-microchip"></i> Expertise</span>
+        <h2 class="section-title">Technical <span class="text-glow-red">Skills</span></h2>
+        <div class="title-underline"></div>
+        <p class="section-subtitle">Core proficiencies acquired through rigorous training, coursework, and practical project builds.</p>
+      </div>
+
+      <div class="container">
+        
+        <div class="skills-grid">
+          
+          <!-- Skill Card 1: Backend & Languages -->
+          <div class="skill-category-card tilt-card" data-tilt>
+            <div class="category-glow"></div>
+            <div class="category-header">
+              <div class="category-icon-box">
+                <i class="fa-brands fa-python"></i>
+              </div>
+              <div class="category-title-group">
+                <h3>Backend &amp; Languages</h3>
+                <span class="category-meta">Server-side Architecture</span>
+              </div>
+            </div>
+
+            <div class="skill-items-list">
+              <div class="skill-meter-item">
+                <div class="meter-info">
+                  <span class="meter-name"><i class="fa-brands fa-python text-glow-red"></i> Python 3</span>
+                  <span class="meter-percentage">Advanced Core</span>
+                </div>
+                <div class="meter-bar-bg">
+                  <div class="meter-bar-fill" style="width: 90%;"></div>
+                </div>
+                <p class="skill-desc">OOP, Data Structures, Functions, Modular Code, Scripting &amp; Logic.</p>
+              </div>
+
+              <div class="skill-meter-item">
+                <div class="meter-info">
+                  <span class="meter-name"><i class="fa-solid fa-network-wired text-glow-red"></i> Django Framework</span>
+                  <span class="meter-percentage">MVT Architecture</span>
+                </div>
+                <div class="meter-bar-bg">
+                  <div class="meter-bar-fill" style="width: 88%;"></div>
+                </div>
+                <p class="skill-desc">Models, Views, Templates, URL Routing, Admin Panel &amp; Multi-app structures.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skill Card 2: Frontend Technologies -->
+          <div class="skill-category-card tilt-card" data-tilt>
+            <div class="category-glow"></div>
+            <div class="category-header">
+              <div class="category-icon-box">
+                <i class="fa-brands fa-html5"></i>
+              </div>
+              <div class="category-title-group">
+                <h3>Frontend Development</h3>
+                <span class="category-meta">Interactive &amp; Responsive UI</span>
+              </div>
+            </div>
+
+            <div class="skill-items-list">
+              <div class="skill-meter-item">
+                <div class="meter-info">
+                  <span class="meter-name"><i class="fa-brands fa-html5 text-glow-red"></i> HTML5</span>
+                  <span class="meter-percentage">Semantic Web</span>
+                </div>
+                <div class="meter-bar-bg">
+                  <div class="meter-bar-fill" style="width: 92%;"></div>
+                </div>
+                <p class="skill-desc">Semantic tags, accessible structures, dynamic forms, modular page elements.</p>
+              </div>
+
+              <div class="skill-meter-item">
+                <div class="meter-info">
+                  <span class="meter-name"><i class="fa-brands fa-css3-alt text-glow-red"></i> CSS3 &amp; Responsive</span>
+                  <span class="meter-percentage">Grid &amp; Flexbox</span>
+                </div>
+                <div class="meter-bar-bg">
+                  <div class="meter-bar-fill" style="width: 90%;"></div>
+                </div>
+                <p class="skill-desc">CSS Grid, Flexbox, Media Queries, Keyframe Animations, Glow &amp; 3D effects.</p>
+              </div>
+
+              <div class="skill-meter-item">
+                <div class="meter-info">
+                  <span class="meter-name"><i class="fa-brands fa-square-js text-glow-red"></i> JavaScript</span>
+                  <span class="meter-percentage">ES6+ Basics</span>
+                </div>
+                <div class="meter-bar-bg">
+                  <div class="meter-bar-fill" style="width: 78%;"></div>
+                </div>
+                <p class="skill-desc">DOM Manipulation, Event Handling, Interactive Headers &amp; Component Logic.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skill Card 3: Database Management -->
+          <div class="skill-category-card tilt-card" data-tilt>
+            <div class="category-glow"></div>
+            <div class="category-header">
+              <div class="category-icon-box">
+                <i class="fa-solid fa-database"></i>
+              </div>
+              <div class="category-title-group">
+                <h3>Database Management</h3>
+                <span class="category-meta">Storage &amp; Relations</span>
+              </div>
+            </div>
+
+            <div class="skill-items-list">
+              <div class="skill-meter-item">
+                <div class="meter-info">
+                  <span class="meter-name"><i class="fa-solid fa-server text-glow-red"></i> SQLite3</span>
+                  <span class="meter-percentage">Relational DB</span>
+                </div>
+                <div class="meter-bar-bg">
+                  <div class="meter-bar-fill" style="width: 85%;"></div>
+                </div>
+                <p class="skill-desc">Tables, schema design, CRUD operations, Django ORM migrations and querying.</p>
+              </div>
+
+              <div class="skill-meter-item">
+                <div class="meter-info">
+                  <span class="meter-name"><i class="fa-solid fa-layer-group text-glow-red"></i> Django ORM</span>
+                  <span class="meter-percentage">Data Modeling</span>
+                </div>
+                <div class="meter-bar-bg">
+                  <div class="meter-bar-fill" style="width: 86%;"></div>
+                </div>
+                <p class="skill-desc">Model definitions, field types, relationships, makemigrations &amp; querysets.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skill Card 4: Tools & Environments -->
+          <div class="skill-category-card tilt-card" data-tilt>
+            <div class="category-glow"></div>
+            <div class="category-header">
+              <div class="category-icon-box">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+              </div>
+              <div class="category-title-group">
+                <h3>Tools &amp; Workflow</h3>
+                <span class="category-meta">Development Environment</span>
+              </div>
+            </div>
+
+            <div class="tools-badge-grid">
+              <div class="tool-badge-pill">
+                <i class="fa-brands fa-git-alt text-glow-red"></i>
+                <span>Git</span>
+              </div>
+              <div class="tool-badge-pill">
+                <i class="fa-brands fa-github text-glow-red"></i>
+                <span>GitHub</span>
+              </div>
+              <div class="tool-badge-pill">
+                <i class="fa-solid fa-code text-glow-red"></i>
+                <span>VS Code</span>
+              </div>
+              <div class="tool-badge-pill">
+                <i class="fa-solid fa-bolt text-glow-red"></i>
+                <span>Postman</span>
+              </div>
+              <div class="tool-badge-pill">
+                <i class="fa-brands fa-apple text-glow-red"></i>
+                <span>macOS Terminal</span>
+              </div>
+              <!-- <div class="tool-badge-pill"> -->
+                <!-- <i class="fa-solid fa-terminal text-glow-red"></i> -->
+                <!-- <span>Zsh / Bash</span> -->
+              <!-- </div> -->
+            </div>
+
+            <div class="workflow-highlight">
+              <i class="fa-solid fa-shield-halved text-glow-red"></i>
+              <span>Proficient in source control, branching, committing, and terminal-driven Unix environments.</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section id="projects" class="section-padding">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-rocket"></i> Work Portfolio</span>
+        <h2 class="section-title">Featured <span class="text-glow-red">Projects</span></h2>
+        <div class="title-underline"></div>
+        <p class="section-subtitle">Comprehensive showcase of real-world full-stack development, Django architecture, and UI engineering.</p>
+      </div>
+
+      <div class="container">
+        
+        <!-- Main Project Showcase Card -->
+        <div class="project-showcase-card tilt-card" data-tilt>
+          <div class="project-card-glow"></div>
+
+          <div class="project-header-bar">
+            <div class="project-title-area">
+              <span class="project-flagship-tag"><i class="fa-solid fa-star"></i> Flagship Full-Stack Project</span>
+              <h3 class="project-title-text">Google Project</h3>
+              <p class="project-subtitle">Django-Based Modular Multi-Interface Web Application</p>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/kranthiyadhav" target="_blank" rel="noopener noreferrer" class="btn-glow-primary btn-sm" data-sfx="click">
+                <i class="fa-brands fa-github"></i>
+                <span>Source Repository</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="project-body-grid">
+            
+            <!-- Left: Description and Architectural Specs -->
+            <div class="project-details">
+              <div class="project-description-block">
+                <h4><i class="fa-solid fa-circle-info text-glow-red"></i> Project Overview</h4>
+                <p>
+                  A comprehensive, Django-based modular web application featuring multiple website interface designs inspired by world-class web applications including <strong>YouTube</strong>, <strong>Google Maps</strong>, and <strong>Google Photos</strong>. Built to practice modular web systems, custom layout algorithms, and scalable Django application structures.
+                </p>
+              </div>
+
+              <!-- Tech Stack Badges -->
+              <div class="project-tech-stack">
+                <span class="tech-tag"><i class="fa-brands fa-python"></i> Python 3</span>
+                <span class="tech-tag"><i class="fa-solid fa-network-wired"></i> Django Framework</span>
+                <span class="tech-tag"><i class="fa-brands fa-html5"></i> HTML5</span>
+                <span class="tech-tag"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                <span class="tech-tag"><i class="fa-solid fa-database"></i> SQLite3</span>
+                <span class="tech-tag"><i class="fa-solid fa-table-cells"></i> Responsive Grid</span>
+              </div>
+
+              <!-- Key Features Highlights -->
+              <div class="project-key-features">
+                <h4><i class="fa-solid fa-list-check text-glow-red"></i> Key Architectural Implementations:</h4>
+                <ul class="features-checklist">
+                  <li>
+                    <i class="fa-solid fa-check-circle text-glow-red"></i>
+                    <div>
+                      <strong>Multi-Division Footer Layouts:</strong> Engineered complex, nested stacked link structures with categorization and responsive wrapping.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check-circle text-glow-red"></i>
+                    <div>
+                      <strong>Interactive Top Headers &amp; Navigation Bars:</strong> Sticky headers, fluid search bars, user action controls, and responsive toggles.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check-circle text-glow-red"></i>
+                    <div>
+                      <strong>Dynamic Grid-Based Layouts:</strong> Engineered flexible CSS grid frameworks supporting variable screen resolutions and card structures.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check-circle text-glow-red"></i>
+                    <div>
+                      <strong>Django Templates &amp; Application Structure:</strong> Reusable template inheritance, partial tags, URL namespaces, and SQLite3 database models.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check-circle text-glow-red"></i>
+                    <div>
+                      <strong>Multi-App Django Setup:</strong> Structured independent Django applications within one master project for clean separation of concerns.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+
+            <!-- Right: Interactive Live Module Visualizer -->
+            <div class="project-interactive-panel">
+              <div class="panel-terminal-top">
+                <div class="terminal-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <span class="terminal-title">Google Project &bull; Module Architecture</span>
+                <span class="terminal-badge">Active Sandbox</span>
+              </div>
+
+              <!-- Module Tabs -->
+              <div class="module-tabs">
+                <button class="module-tab-btn active" data-module="youtube">
+                  <i class="fa-brands fa-youtube"></i> YouTube UI
+                </button>
+                <button class="module-tab-btn" data-module="maps">
+                  <i class="fa-solid fa-map-location-dot"></i> Maps UI
+                </button>
+                <button class="module-tab-btn" data-module="photos">
+                  <i class="fa-solid fa-images"></i> Photos UI
+                </button>
+              </div>
+
+              <!-- Module Preview Displays -->
+              <div class="module-content-display">
+                
+                <!-- YouTube Module Preview -->
+                <div class="module-view active" id="module-youtube">
+                  <div class="mockup-window">
+                    <div class="mockup-nav">
+                      <div class="mockup-brand"><i class="fa-brands fa-youtube text-glow-red"></i> <span>YT Interface</span></div>
+                      <div class="mockup-search"><i class="fa-solid fa-magnifying-glass"></i> Search modular videos...</div>
+                      <div class="mockup-user"><i class="fa-regular fa-bell"></i> <i class="fa-solid fa-circle-user"></i></div>
+                    </div>
+                    <div class="mockup-grid-yt">
+                      <div class="mockup-card">
+                        <div class="yt-thumb"><span><i class="fa-solid fa-play"></i> Django Views 101</span></div>
+                        <div class="yt-meta"><strong>Python Django Masterclass</strong><span>12k views &bull; 2 days ago</span></div>
+                      </div>
+                      <div class="mockup-card">
+                        <div class="yt-thumb"><span><i class="fa-solid fa-play"></i> Multi-Division Footer</span></div>
+                        <div class="yt-meta"><strong>CSS Grid Advanced Layouts</strong><span>8.4k views &bull; 1 week ago</span></div>
+                      </div>
+                      <div class="mockup-card">
+                        <div class="yt-thumb"><span><i class="fa-solid fa-play"></i> SQLite3 Integration</span></div>
+                        <div class="yt-meta"><strong>Backend Database Setup</strong><span>15k views &bull; 3 weeks ago</span></div>
+                      </div>
+                      <div class="mockup-card">
+                        <div class="yt-thumb"><span><i class="fa-solid fa-play"></i> Responsive Header</span></div>
+                        <div class="yt-meta"><strong>Modern Navigation Systems</strong><span>6.1k views &bull; 1 month ago</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="module-caption">
+                    <span class="caption-tag">Django App:</span> <code>apps.youtube_clone</code> &bull; Dynamic video card grid, sidebar collapsibility, header bar.
+                  </div>
+                </div>
+
+                <!-- Maps Module Preview -->
+                <div class="module-view" id="module-maps">
+                  <div class="mockup-window">
+                    <div class="mockup-nav">
+                      <div class="mockup-brand"><i class="fa-solid fa-location-dot text-glow-red"></i> <span>Maps Interface</span></div>
+                      <div class="mockup-search"><i class="fa-solid fa-location-crosshairs"></i> Bengaluru, Karnataka, India</div>
+                    </div>
+                    <div class="mockup-maps-area">
+                      <div class="maps-hud">
+                        <span class="hud-item"><i class="fa-solid fa-compass"></i> GPS Active</span>
+                        <span class="hud-item"><i class="fa-solid fa-layer-group"></i> Satellite Layer</span>
+                      </div>
+                      <div class="maps-pin-pulse">
+                        <i class="fa-solid fa-map-pin"></i>
+                        <span>Web Tech Institute, Bengaluru</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="module-caption">
+                    <span class="caption-tag">Django App:</span> <code>apps.maps_clone</code> &bull; Split-view layout, interactive search coordinates, responsive map container.
+                  </div>
+                </div>
+
+                <!-- Photos Module Preview -->
+                <div class="module-view" id="module-photos">
+                  <div class="mockup-window">
+                    <div class="mockup-nav">
+                      <div class="mockup-brand"><i class="fa-solid fa-images text-glow-red"></i> <span>Photos Interface</span></div>
+                      <div class="mockup-search"><i class="fa-solid fa-magnifying-glass"></i> Search albums, dates, tags...</div>
+                    </div>
+                    <div class="mockup-photos-masonry">
+                      <div class="photo-tile tile-1"><i class="fa-solid fa-image"></i><span>Album: Projects</span></div>
+                      <div class="photo-tile tile-2"><i class="fa-solid fa-image"></i><span>Tirupati College</span></div>
+                      <div class="photo-tile tile-3"><i class="fa-solid fa-image"></i><span>Web Tech Training</span></div>
+                      <div class="photo-tile tile-4"><i class="fa-solid fa-image"></i><span>Python Code</span></div>
+                      <div class="photo-tile tile-5"><i class="fa-solid fa-image"></i><span>Django Views</span></div>
+                    </div>
+                  </div>
+                  <div class="module-caption">
+                    <span class="caption-tag">Django App:</span> <code>apps.photos_clone</code> &bull; Dynamic masonry grid layout, image filtering, responsive layout.
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ARCHITECTURAL HIGHLIGHTS / FEATURES BUILT SECTION -->
+    <section id="architecture" class="section-padding bg-darker">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-compass-drafting"></i> Core Implementations</span>
+        <h2 class="section-title">Specialized <span class="text-glow-red">Features Built</span></h2>
+        <div class="title-underline"></div>
+        <p class="section-subtitle">Architectural UI engineering patterns mastered during training and applied across applications.</p>
+      </div>
+
+      <div class="container">
+        
+        <div class="features-built-grid">
+          
+          <!-- Feature 1: Multi-division Footer -->
+          <div class="feature-spec-card tilt-card" data-tilt>
+            <div class="feature-spec-icon">
+              <i class="fa-solid fa-table-columns"></i>
+            </div>
+            <div class="feature-spec-content">
+              <h3>Multi-Division Footer Layouts</h3>
+              <span class="spec-subtitle">Stacked Link Structures &amp; Categorization</span>
+              <p>
+                Engineered complex, hierarchical footer architectures featuring segmented column columns, stacked link hierarchies, category headings, and responsive breakpoint collapses. Provides seamless navigation across large-scale web applications.
+              </p>
+              <div class="code-pill-list">
+                <span class="code-pill">CSS Grid Columns</span>
+                <span class="code-pill">Stacked Links</span>
+                <span class="code-pill">Flexbox Wrapping</span>
+                <span class="code-pill">Semantic &lt;footer&gt;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 2: Interactive Top Headers -->
+          <div class="feature-spec-card tilt-card" data-tilt>
+            <div class="feature-spec-icon">
+              <i class="fa-solid fa-window-maximize"></i>
+            </div>
+            <div class="feature-spec-content">
+              <h3>Interactive Top Headers &amp; Navbars</h3>
+              <span class="spec-subtitle">Sticky Glassmorphism &amp; Mobile Navigation</span>
+              <p>
+                Crafted high-performance, sticky top navigation bars equipped with brand logos, dynamic search input fields, profile dropdowns, and responsive mobile hamburger drawer states with smooth CSS transitions.
+              </p>
+              <div class="code-pill-list">
+                <span class="code-pill">Backdrop-Filter</span>
+                <span class="code-pill">Mobile Drawer</span>
+                <span class="code-pill">CSS Keyframes</span>
+                <span class="code-pill">Event Delegation</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 3: Dynamic Grid Layouts -->
+          <div class="feature-spec-card tilt-card" data-tilt>
+            <div class="feature-spec-icon">
+              <i class="fa-solid fa-grip"></i>
+            </div>
+            <div class="feature-spec-content">
+              <h3>Dynamic Responsive Grid Layouts</h3>
+              <span class="spec-subtitle">Adaptive Web App Interfaces</span>
+              <p>
+                Designed mathematical, responsive grid layouts utilizing modern CSS <code>repeat(auto-fit, minmax(...))</code> conventions, ensuring perfect layout adaptation across smart displays, desktop monitors, tablets, and smartphones without layout breakage.
+              </p>
+              <div class="code-pill-list">
+                <span class="code-pill">Auto-Fit Grid</span>
+                <span class="code-pill">Fluid Media Queries</span>
+                <span class="code-pill">Aspect Ratio</span>
+                <span class="code-pill">Zero Overflow</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROFESSIONAL TRAINING & WORK EXPERIENCE SECTION -->
+    <section id="experience" class="section-padding">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-briefcase"></i> Experience</span>
+        <h2 class="section-title">Professional <span class="text-glow-red">Training &amp; Experience</span></h2>
+        <div class="title-underline"></div>
+        <p class="section-subtitle">Real-world full-stack development training and software engineering practice.</p>
+      </div>
+
+      <div class="container">
+        
+        <div class="experience-timeline">
+          
+          <div class="timeline-node">
+            <div class="timeline-marker">
+              <span class="marker-pulse"></span>
+              <i class="fa-solid fa-terminal"></i>
+            </div>
+
+            <div class="timeline-card tilt-card" data-tilt>
+              <div class="card-glow-edge"></div>
+
+              <div class="exp-card-header">
+                <div class="institute-brand">
+                  <div class="institute-logo-box">
+                    <img src="assets/images/webtech-logo.jpg" alt="Web Tech Software Solutions Logo" class="institute-logo-img">
+                  </div>
+                  <div class="institute-text">
+                    <h3 class="role-title">Python Full-Stack Developer Trainee</h3>
+                    <div class="institute-name">
+                      <strong>Web Tech Institute</strong> &bull; <span class="location"><i class="fa-solid fa-location-dot"></i> Bengaluru, Karnataka</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="exp-date-badge">
+                  <i class="fa-regular fa-clock"></i> Ongoing Training
+                </div>
+              </div>
+
+              <div class="exp-focus-area">
+                <span class="focus-title"><i class="fa-solid fa-bullseye text-glow-red"></i> Focus Area:</span>
+                <span class="focus-text">Python Full-Stack Development, Modern Web Design, and Database Architecture.</span>
+              </div>
+
+              <div class="key-learnings-section">
+                <h4><i class="fa-solid fa-chalkboard-user text-glow-red"></i> Key Learning Areas &amp; Practical Work:</h4>
+                <div class="learnings-grid">
+                  <div class="learning-item">
+                    <i class="fa-solid fa-angles-right text-glow-red"></i>
+                    <span>Learned backend development using Python and Django.</span>
+                  </div>
+                  <div class="learning-item">
+                    <i class="fa-solid fa-angles-right text-glow-red"></i>
+                    <span>Practiced HTML5 and CSS3 for frontend development.</span>
+                  </div>
+                  <div class="learning-item">
+                    <i class="fa-solid fa-angles-right text-glow-red"></i>
+                    <span>Created responsive web page layouts using CSS Grid &amp; Flexbox.</span>
+                  </div>
+                  <div class="learning-item">
+                    <i class="fa-solid fa-angles-right text-glow-red"></i>
+                    <span>Worked with Django project structure, models, views, and templates.</span>
+                  </div>
+                  <div class="learning-item">
+                    <i class="fa-solid fa-angles-right text-glow-red"></i>
+                    <span>Practiced database operations and queries using SQLite3.</span>
+                  </div>
+                  <div class="learning-item">
+                    <i class="fa-solid fa-angles-right text-glow-red"></i>
+                    <span>Learned Git and GitHub for collaborative source code management.</span>
+                  </div>
+                  <div class="learning-item">
+                    <i class="fa-solid fa-angles-right text-glow-red"></i>
+                    <span>Used Visual Studio Code and macOS Terminal for agile development.</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Skills Applied Pills -->
+              <div class="exp-skills-tags">
+                <span class="tag-badge">Python 3</span>
+                <span class="tag-badge">Django MVC</span>
+                <span class="tag-badge">HTML5</span>
+                <span class="tag-badge">CSS3</span>
+                <span class="tag-badge">JavaScript</span>
+                <span class="tag-badge">SQLite3</span>
+                <span class="tag-badge">Git &amp; GitHub</span>
+                <span class="tag-badge">macOS Terminal</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ACADEMIC BACKGROUND SECTION -->
+    <section id="education" class="section-padding bg-darker">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-solid fa-graduation-cap"></i> Academics</span>
+        <h2 class="section-title">Academic <span class="text-glow-red">Background</span></h2>
+        <div class="title-underline"></div>
+        <p class="section-subtitle">Formal technical foundation in Computer Science and Engineering.</p>
+      </div>
+
+      <div class="container">
+        
+        <div class="education-card tilt-card" data-tilt>
+          <div class="card-glow-edge"></div>
+
+          <div class="edu-layout">
+            <div class="edu-icon-container">
+              <i class="fa-solid fa-building-columns"></i>
+              <span class="edu-year-badge">Graduation: 2026</span>
+            </div>
+
+            <div class="edu-details">
+              <div class="edu-title-group">
+                <span class="edu-status-tag">Diploma Graduate (C23)</span>
+                <h3 class="edu-degree">Diploma in Computer Science and Engineering (CSE)</h3>
+                <h4 class="edu-institute">
+                  <i class="fa-solid fa-landmark text-glow-red"></i> SV Government Polytechnic, Tirupati
+                </h4>
+              </div>
+
+              <p class="edu-description">
+                Comprehensive academic education focusing on core Computer Science and Engineering curriculum, computer programming, relational database systems, operating systems, and web technologies under the prestigious State Board of Technical Education.
+              </p>
+
+              <div class="edu-highlights">
+                <div class="highlight-chip">
+                  <i class="fa-solid fa-check text-glow-red"></i> Computer Science &amp; Engineering (CSE)
+                </div>
+                <div class="highlight-chip">
+                  <i class="fa-solid fa-check text-glow-red"></i> C23 Curriculum Scheme
+                </div>
+                <div class="highlight-chip">
+                  <i class="fa-solid fa-check text-glow-red"></i> SV Government Polytechnic, Tirupati
+                </div>
+                <div class="highlight-chip">
+                  <i class="fa-solid fa-check text-glow-red"></i> Graduation Year: 2026
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section-padding">
+      <div class="section-header">
+        <span class="section-badge"><i class="fa-regular fa-paper-plane"></i> Get In Touch</span>
+        <h2 class="section-title">Let's <span class="text-glow-red">Connect</span></h2>
+        <div class="title-underline"></div>
+        <p class="section-subtitle">Interested in hiring or collaborating? Feel free to reach out via email, phone, or GitHub.</p>
+      </div>
+
+      <div class="container contact-container">
+        
+        <div class="contact-grid">
+          
+          <!-- Contact Info Column -->
+          <div class="contact-info-column">
+            
+            <div class="contact-card tilt-card" data-tilt>
+              <div class="contact-card-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="contact-card-text">
+                <span class="contact-type">Direct Email</span>
+                <a href="mailto:burrakranthi41@gmail.com" class="contact-val">burrakranthi41@gmail.com</a>
+                <span class="contact-action-hint">Click to send direct email</span>
+              </div>
+              <button class="btn-copy-chip" data-copy="burrakranthi41@gmail.com" title="Copy Email">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+
+            <div class="contact-card tilt-card" data-tilt>
+              <div class="contact-card-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="contact-card-text">
+                <span class="contact-type">Phone Number</span>
+                <a href="tel:7013267395" class="contact-val">+91 7013267395</a>
+                <span class="contact-action-hint">Click to call directly</span>
+              </div>
+              <button class="btn-copy-chip" data-copy="7013267395" title="Copy Phone Number">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+
+            <div class="contact-card tilt-card" data-tilt>
+              <div class="contact-card-icon">
+                <i class="fa-brands fa-github"></i>
+              </div>
+              <div class="contact-card-text">
+                <span class="contact-type">GitHub Profile</span>
+                <a href="https://github.com/kranthiyadhav" target="_blank" rel="noopener noreferrer" class="contact-val">github.com/kranthiyadhav</a>
+                <span class="contact-action-hint">View code repositories</span>
+              </div>
+              <a href="https://github.com/kranthiyadhav" target="_blank" rel="noopener noreferrer" class="btn-copy-chip" title="Visit GitHub">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+
+            <div class="contact-card tilt-card" data-tilt>
+              <div class="contact-card-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="contact-card-text">
+                <span class="contact-type">Location</span>
+                <span class="contact-val">Bengaluru, Karnataka, India</span>
+                <span class="contact-action-hint">Available for on-site &amp; remote roles</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Contact Message Form -->
+          <div class="contact-form-column tilt-card" data-tilt>
+            <div class="card-glow-edge"></div>
+            <h3><i class="fa-solid fa-message text-glow-red"></i> Send a Message</h3>
+            <p class="form-intro">Drop a quick message and I will reply as promptly as possible.</p>
+
+            <form id="contactForm" class="contact-form">
+              <div class="form-group">
+                <label for="senderName"><i class="fa-regular fa-user"></i> Your Name</label>
+                <input type="text" id="senderName" name="name" placeholder="e.g. John Doe / HR Manager" required>
+              </div>
+
+              <div class="form-group">
+                <label for="senderEmail"><i class="fa-regular fa-envelope"></i> Your Email</label>
+                <input type="email" id="senderEmail" name="email" placeholder="e.g. john@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="senderSubject"><i class="fa-solid fa-tag"></i> Subject</label>
+                <input type="text" id="senderSubject" name="subject" placeholder="e.g. Job Opportunity / Interview Invitation" required>
+              </div>
+
+              <div class="form-group">
+                <label for="senderMessage"><i class="fa-regular fa-comment-dots"></i> Message</label>
+                <textarea id="senderMessage" name="message" rows="4" placeholder="Hello Kirani, we would like to discuss..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-glow-primary btn-block" data-sfx="click">
+                <span>Send Message</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+
+            <div id="formStatus" class="form-status-message"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MULTI-DIVISION FOOTER WITH STACKED LINK STRUCTURES -->
+  <!-- Demonstrating her signature expertise in multi-division footer layouts -->
+  <footer class="multi-division-footer">
+    <div class="footer-glow-separator"></div>
+
+    <div class="footer-container">
+      
+      <!-- Division 1: Brand & Bio -->
+      <div class="footer-division division-brand">
+        <div class="footer-logo">
+          <span class="logo-symbol">&lt;</span>
+          <span class="logo-text">BURRA KIRANI</span>
+          <span class="logo-dot">.py</span>
+          <span class="logo-symbol">&gt;</span>
+        </div>
+        <p class="footer-bio">
+          Python Full-Stack Developer &amp; Trainee building scalable, responsive, and performance-driven web architectures.
+        </p>
+        <div class="footer-badge-pill">
+          <span class="status-dot-green"></span>
+          <span>Ready for Opportunities 2026</span>
+        </div>
+        <div class="footer-social-icons">
+          <a href="https://github.com/kranthiyadhav" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="mailto:burrakranthi41@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="tel:7013267395" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+
+      <!-- Division 2: Navigation Links (Stacked) -->
+      <div class="footer-division division-links">
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="stacked-link-list">
+          <li><a href="#hero"><i class="fa-solid fa-angle-right"></i> Home Overview</a></li>
+          <li><a href="#about"><i class="fa-solid fa-angle-right"></i> About &amp; Objective</a></li>
+          <li><a href="#skills"><i class="fa-solid fa-angle-right"></i> Technical Skills</a></li>
+          <li><a href="#projects"><i class="fa-solid fa-angle-right"></i> Featured Projects</a></li>
+          <li><a href="#architecture"><i class="fa-solid fa-angle-right"></i> Features Built</a></li>
+        </ul>
+      </div>
+
+      <!-- Division 3: Technical Skills Stacked -->
+      <div class="footer-division division-skills">
+        <h4 class="footer-heading">Tech Stack</h4>
+        <ul class="stacked-link-list">
+          <li><a href="#skills"><i class="fa-brands fa-python text-glow-red"></i> Python 3 &amp; OOP</a></li>
+          <li><a href="#skills"><i class="fa-solid fa-network-wired text-glow-red"></i> Django Framework</a></li>
+          <li><a href="#skills"><i class="fa-brands fa-html5 text-glow-red"></i> HTML5 &amp; CSS3</a></li>
+          <li><a href="#skills"><i class="fa-solid fa-database text-glow-red"></i> SQLite3 Database</a></li>
+          <li><a href="#skills"><i class="fa-brands fa-git-alt text-glow-red"></i> Git &amp; GitHub</a></li>
+        </ul>
+      </div>
+
+      <!-- Division 4: Institutions & Verification -->
+      <div class="footer-division division-training">
+        <h4 class="footer-heading">Education &amp; Training</h4>
+        <ul class="stacked-link-list">
+          <li>
+            <a href="#experience">
+              <i class="fa-solid fa-building text-glow-red"></i> Web Tech Institute, Bengaluru
+            </a>
+          </li>
+          <li>
+            <a href="#education">
+              <i class="fa-solid fa-graduation-cap text-glow-red"></i> SV Govt Polytechnic, Tirupati
+            </a>
+          </li>
+          <li>
+            <span class="footer-meta-item">
+              <i class="fa-solid fa-certificate text-glow-red"></i> Diploma CSE (C23 Scheme)
+            </span>
+          </li>
+          <li>
+            <span class="footer-meta-item">
+              <i class="fa-solid fa-location-pin text-glow-red"></i> Bengaluru, Karnataka, India
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Division 5: Contact Quick-Actions -->
+      <div class="footer-division division-contact">
+        <h4 class="footer-heading">Direct Contact</h4>
+        <ul class="stacked-link-list">
+          <li>
+            <a href="mailto:burrakranthi41@gmail.com" class="footer-contact-link">
+              <i class="fa-solid fa-envelope text-glow-red"></i> burrakranthi41@gmail.com
+            </a>
+          </li>
+          <li>
+            <a href="tel:7013267395" class="footer-contact-link">
+              <i class="fa-solid fa-phone text-glow-red"></i> +91 7013267395
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/kranthiyadhav" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+              <i class="fa-brands fa-github text-glow-red"></i> kranthiyadhav
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright & Architecture Notice -->
+    <div class="footer-bottom-bar">
+      <div class="footer-bottom-container">
+        <div class="copyright-text">
+          &copy; <span id="currentYear">2026</span> <strong>Burra Kirani</strong> &bull; All Rights Reserved. Engineered with Python, Django, HTML5, CSS3.
+        </div>
+        <div class="back-to-top">
+          <a href="#hero" class="btn-back-top" title="Back to top" aria-label="Back to top">
+            <span>Back To Top</span>
+            <i class="fa-solid fa-arrow-up"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <!-- Three.js CDN for 3D Background & Interactive Nodes -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- 3D Interactive Scene Script -->
+  <script src="js/three-scene.js"></script>
+  <!-- Core UI & Interactions Script -->
+  <script src="js/main.js"></script>
+</body>
+</html>
